@@ -141,12 +141,25 @@ body {
     border-radius: 10px;
     border-left: solid 20px var(--goldenrod);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cards:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.projectName {
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.projectDescription {
+    padding: 10px;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 /* Right side panel styling */
