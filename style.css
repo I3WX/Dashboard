@@ -1,143 +1,203 @@
-:root{
-    --width : 100vw;
-    --height : 100vh;
-    --dodgerBlue : #1992d4;
-    --LightGray : #d0d0d0;
-    --white : #ffffff;
-    --Goldenrod : #f0b429;
+:root {
+    --width: 100vw;
+    --height: 100vh;
+    --dodgerBlue: #1992d4;
+    --lightGray: #d0d0d0;
+    --white: #ffffff;
+    --goldenrod: #f0b429;
+    --hoverBlue: #1575a0; /* Darker blue for hover effects */
+    --activeBlue: #13678b; /* Even darker for active state */
+    --fontFamily: 'Arial', sans-serif; /* Modern font */
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-html{
+
+html {
     height: 100%;
 }
-#Dashboard{
+
+body {
+    font-family: var(--fontFamily);
+}
+
+#Dashboard {
     width: var(--width);
     height: var(--height);
     display: flex;
 }
-#sidePanel{
-    width: calc(var(--width)*0.15);
+
+/* Side panel styling */
+/* Side panel styling */
+#sidePanel {
+    width: 15%;
     height: 100%;
     background-color: var(--dodgerBlue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
-#mainPanel{
-    width: calc(var(--width)*0.85);
-    height: var(--height);
-    background-color: var(--LightGray);
-}
-#header{
-    background-color: var(--white) ;
+#profileOptions {
     width: 100%;
-    height: calc(var(--height)*0.20 );
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between options */
 }
-#maincontent{
+
+.sidePanelLogo {
     width: 100%;
-    height: calc(var(--height)*0.80);
+    display: flex;
+    align-items: center;
+    font-size: 1.2em; /* Increased font size */
+    color: var(--white);
+    padding: 12px 20px; /* Adjusted padding */
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidePanelLogo img {
+    margin-right: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+.sidePanelLogo:hover {
+    background-color: var(--hoverBlue); /* Darker blue for hover effects */
+    padding-left: 30px; /* Increase padding on hover */
+}
+
+.sidePanelLogo:active {
+    background-color: var(--activeBlue); /* Even darker for active state */
+}
+
+.sidePanelLogo:first-child {
+    font-size: 1.4em; /* Larger font size for first child */
+    margin-top: 10px; /* Space from top */
+}
+
+
+#mainPanel {
+    width: 85%;
+    height: 100%;
+    background-color: var(--lightGray);
+}
+
+/* Header styling */
+#header {
+    background-color: var(--white);
+    width: 100%;
+    height: 20%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content styling */
+#maincontent {
+    width: 100%;
+    height: 80%;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
 }
-#cardHolder{
+
+#cardHolder {
     width: 100%;
     height: 100%;
 }
-#CardHeader{
+
+#CardHeader {
     height: 8%;
     width: 50%;
-    font-size:150%;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+#Cards {
+    width: 100%;
+    height: 92%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.cards {
+    background-color: var(--white);
+    height: 80%;
+    width: 90%;
+    border-radius: 10px;
+    border-left: solid 20px var(--goldenrod);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Right side panel styling */
+#rightSidePanel {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+#AnnouncementBox, #TreandingBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#AnnouncementHeadding, #TreandingHeadding {
+    height: 20%;
+    width: 100%;
+    font-size: 1.5em;
     display: flex;
     justify-content: center;
     align-items: end;
     font-weight: 700;
     margin-bottom: 10px;
 }
-#Cards{
-    width: calc(calc(var(--width)*0.80)*0.80) ;
-    height: 92%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-row: 1fr 1fr 1fr;
-}
-.cards{
-    background-color: var(--white);
-    height: 80%;
-    width: 90%;
-    border-radius: 10px;
-    border-left: solid 20px var(--Goldenrod);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-#rightSidePanel{
-    width: 90%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-}
-#AnnouncementBox{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#AnnouncementHeadding{
-    height: 20%;
-    width: 100%;
-    font-size: 150%;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    font-weight: 700;
-}
-#Announcements{
+
+#Announcements, #Treandings {
     height: 80%;
     width: 80%;
     background-color: var(--white);
     border-radius: 10px;
     margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 15px;
 }
-.Announcement{
+
+.Announcement, .Treanding {
     height: 30%;
-    width: 80%;
-    border-bottom: solid 2px var(--LightGray);
+    width: 100%;
+    border-bottom: solid 2px var(--lightGray);
+    padding: 10px 0;
 }
-.Announcement:last-child {
+
+.Announcement:last-child, .Treanding:last-child {
     border-bottom: none;
-}
-#TreandingBox{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#TreandingHeadding{
-    height: 20%;
-    width: 100%;
-    font-size: 150%;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    font-weight: 700;
-}
-#Treandings{
-    height: 80%;
-    width: 80%;
-    background-color: var(--white);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
