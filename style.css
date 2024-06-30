@@ -1,38 +1,40 @@
+/* Root Variables */
 :root {
-    --width: 100vw;
-    --height: 100vh;
-    --dodgerBlue: #1992d4;
-    --lightGray: #d0d0d0;
-    --white: #ffffff;
-    --black: #000000;
-    --goldenrod: #f0b429;
-    --hoverBlue: #1575a0; /* Darker blue for hover effects */
-    --activeBlue: #13678b; /* Even darker for active state */
-    --fontFamily: 'Arial', sans-serif; /* Modern font */
+    --width: 100vw; /* Full viewport width */
+    --height: 100vh; /* Full viewport height */
+    --dodgerBlue: #1992d4; /* Main blue color */
+    --lightGray: #d0d0d0; /* Light gray background */
+    --white: #ffffff; /* White color */
+    --black: #000000; /* Black color */
+    --goldenrod: #f0b429; /* Accent color */
+    --hoverBlue: #1575a0; /* Darker blue for hover */
+    --activeBlue: #13678b; /* Active state blue */
+    --fontFamily: 'Arial', sans-serif; /* Default font family */
 }
 
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
+html, body {
+    height: 100%; /* Full height */
 }
 
 body {
-    font-family: var(--fontFamily);
+    font-family: var(--fontFamily); /* Default font */
 }
 
+/* Dashboard Layout */
 #Dashboard {
     width: var(--width);
     height: var(--height);
-    display: flex;
+    display: flex; /* Flexbox for main layout */
 }
 
-/* Side panel styling */
-/* Side panel styling */
+/* Side Panel */
 #sidePanel {
     width: 15%;
     height: 100%;
@@ -41,7 +43,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Right shadow */
 }
 
 #profileOptions {
@@ -50,63 +52,66 @@ body {
     flex-direction: column;
 }
 
+/* Side Panel Item */
 .sidePanelLogo {
     width: 100%;
     display: flex;
     align-items: center;
-    font-size: 1.2em; /* Increased font size */
+    font-size: 1.2em;
     color: var(--white);
-    padding: 12px 20px; /* Adjusted padding */
-    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    padding: 12px 20px;
+    transition: background-color 0.3s, padding-left 0.3s;
     cursor: pointer;
     text-align: left;
 }
 
 .sidePanelLogo img {
-    margin-right: 15px;
+    margin-right: 15px; /* Space between icon and text */
     height: 30px;
     width: 30px;
 }
 
 .sidePanelLogo:hover {
-    background-color: var(--hoverBlue); /* Darker blue for hover effects */
-    padding-left: 30px; /* Increase padding on hover */
+    background-color: var(--hoverBlue);
+    padding-left: 30px; /* Indent on hover */
 }
 
 .sidePanelLogo:active {
-    background-color: var(--activeBlue); /* Even darker for active state */
+    background-color: var(--activeBlue);
 }
 
 .sidePanelLogo:first-child {
-    font-size: 1.4em; /* Larger font size for first child */
-    margin-top: 10px; /* Space from top */
+    font-size: 1.4em;
+    margin-top: 10px;
 }
 
-
+/* Main Panel */
 #mainPanel {
     width: 85%;
     height: 100%;
     background-color: var(--lightGray);
 }
 
-/* Header styling */
+/* Header */
 #header {
     background-color: var(--white);
     width: 100%;
     height: 20%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bottom shadow */
     display: flex;
     flex-direction: column;
 }
-#headUpper , #headDown{
+
+#headUpper, #headDown {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 50%;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
 }
 
+/* Search Bar */
 #searchBar {
     display: flex;
     align-items: center;
@@ -129,6 +134,7 @@ body {
     flex-grow: 0.7;
 }
 
+/* Profile Group */
 #profileGroup {
     display: flex;
     align-items: center;
@@ -136,7 +142,7 @@ body {
     padding: 20px;
 }
 
-#notificationLogo ,#profilePicture {
+#notificationLogo, #profilePicture {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -145,18 +151,17 @@ body {
     justify-content: center;
 }
 
-#notificationLogo img , #profilePicture img{
+#notificationLogo img, #profilePicture img {
     height: 30px;
     width: 30px;
 }
-
 
 #profileName {
     margin-left: 10px;
     font-weight: bold;
 }
 
-#profile{
+#profile {
     display: flex;
 }
 
@@ -164,7 +169,7 @@ body {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: #ffd700;
+    background-color: #ffd700; /* Profile background */
     margin-right: 10px;
 }
 
@@ -176,18 +181,18 @@ body {
 
 #hithere {
     font-size: 1em;
-    color: var(--fontColor);
 }
 
 #username {
     font-weight: bold;
     font-size: 1.5em;
-    color: var(--fontColor);
 }
 
+/* Header Buttons */
 #buttons {
     display: flex;
     gap: 10px;
+    padding: 20px;
 }
 
 .button {
@@ -202,7 +207,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
@@ -210,16 +215,17 @@ body {
     color: var(--black);
 }
 
-/* Main content styling */
+/* Main Content */
 #maincontent {
     width: 100%;
     height: 80%;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr; /* Main content and side panel */
     gap: 20px;
     padding: 20px;
 }
 
+/* Card Holder */
 #cardHolder {
     width: 100%;
     height: 100%;
@@ -237,12 +243,13 @@ body {
     margin-left: 20px;
 }
 
+/* Cards */
 #Cards {
     width: 100%;
     height: 92%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: 1fr 1fr 1fr; /* Three rows */
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -253,10 +260,10 @@ body {
     height: 80%;
     width: 90%;
     border-radius: 10px;
-    border-left: solid 20px var(--goldenrod);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: solid 20px var(--goldenrod); /* Left accent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Card shadow */
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cards:hover {
@@ -276,12 +283,12 @@ body {
     line-height: 1.4;
 }
 
-/* Right side panel styling */
+/* Right Side Panel */
 #rightSidePanel {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: auto auto; /* Use 'auto' for dynamic height based on content */
+    grid-template-rows: auto auto; /* Two sections */
     gap: 20px;
     padding: 20px;
 }
@@ -313,14 +320,13 @@ body {
 .Announcement, .Treanding {
     width: 100%;
     padding: 10px 0;
-    border-bottom: solid 2px var(--lightGray);
+    border-bottom: solid 2px var(--lightGray); /* Divider */
 }
 
 .Announcement:last-child, .Treanding:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Remove bottom border */
 }
 
 .announcement, .treanding {
     font-size: 0.8em;
 }
-
