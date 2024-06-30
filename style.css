@@ -4,6 +4,7 @@
     --dodgerBlue: #1992d4;
     --lightGray: #d0d0d0;
     --white: #ffffff;
+    --black: #000000;
     --goldenrod: #f0b429;
     --hoverBlue: #1575a0; /* Darker blue for hover effects */
     --activeBlue: #13678b; /* Even darker for active state */
@@ -154,6 +155,61 @@ body {
     margin-left: 10px;
     font-weight: bold;
 }
+
+#profile{
+    display: flex;
+}
+
+#profile img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #ffd700;
+    margin-right: 10px;
+}
+
+#profileText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#hithere {
+    font-size: 1em;
+    color: var(--fontColor);
+}
+
+#username {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--fontColor);
+}
+
+#buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 15px;
+    background-color: var(--dodgerBlue);
+    color: var(--white);
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darken(var(--hoverBlue), 10%);
+    color: var(--black);
+}
+
 /* Main content styling */
 #maincontent {
     width: 100%;
